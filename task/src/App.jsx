@@ -12,7 +12,7 @@ function App() {
 
   const {setUserInfo,userInfo} = useContext(UserContext);
   console.log("UserINNFo",userInfo);
-  // console.log("userInfo",userInfo);
+ 
   return (
     <>
       <UserContextProvider>
