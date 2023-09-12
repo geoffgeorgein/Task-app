@@ -1,0 +1,59 @@
+.home{
+
+    div{
+
+        display: flex;
+        flex-direction: column;
+
+        .inputContainer{
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+
+            input{
+                padding: 4px 1px;
+                border:none;
+                border-bottom: 1px solid gray;
+                margin-left: 20px;
+                width: 100%;
+
+                :focus{
+                    border: none    ;
+                }
+                            
+                
+            }
+        }
+
+        .taskName{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;  
+            cursor: pointer;
+
+            
+
+            .icons{
+                width: 55px;
+                display: flex;
+                flex-direction: row;
+                cursor: pointer;
+                svg{
+                    max-width: 15px;
+                    margin-right: 5px;
+                }
+            }
+        }
+
+        
+    }
+}
+
+.line_through{
+    text-decoration: line-through;
+}
+
+    
