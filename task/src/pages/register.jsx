@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import './registerPage.scss';
 
 const Register = () => {
@@ -22,7 +22,7 @@ const Register = () => {
     }
   }
 
-  return (
+  return ( 
     <div>
         <form className="register" onSubmit={register}>
         <h1>Register</h1>
@@ -35,6 +35,7 @@ const Register = () => {
                 value={password}
                 onChange={ev => setPassword(ev.target.value)}/>
         <button>Register</button>
+        <Link to={'/login'}><button  className='login'>Login</button></Link>
         </form>
     </div>
   )

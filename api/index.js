@@ -13,9 +13,23 @@ const app=express();
 app.use(cors());    
 app.use(express.json());
 
-app.use(cors({credentials:true,origin:'http://127.0.0.1:5173'}));
+// app.use(cors({credentials:true,origin:'http://127.0.0.1:5173'}));
 // mongodb+srv://<username>:<password>@cluster0.zqgwnbu.mongodb.net/
 mongoose.connect('mongodb+srv://geoff234:q0ar5cpfIgwaehIX@cluster0.zqgwnbu.mongodb.net/')
+
+app.use((req, res, next) => {
+    const corsWhitelist = [
+        'https://task-app-hazel-pi.vercel.app/',
+        'http://127.0.0.1:5173',
+        
+    ];
+    if (corsWhitelist.indexOf(req.headers.origin) !== -1) {
+        res.header('Access-Control-Allow-Origin', req.headers.origin);
+        res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    }
+
+    next();
+});
 
 app.get('/', (req, res)=>{
 
