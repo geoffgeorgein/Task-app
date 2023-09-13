@@ -8,7 +8,7 @@ const Home = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/get")
+      .get("https://task-api-cvll.onrender.com/get")
       .then((result) => setList(result.data));
   }, [List]);
 
@@ -16,14 +16,14 @@ const Home = () => {
 
 const fetch=()=>{
     axios
-    .get("http://localhost:4000/get", { task: task })
+    .get("https://task-api-cvll.onrender.com/get", { task: task })
     .then((result) => setList(result.data))
     .catch((err) => console.log(err));
 }
 
   const handleAdd = () => {
     axios
-      .post("http://localhost:4000/add", { task: task })
+      .post("https://task-api-cvll.onrender.com/add", { task: task })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
         fetch();
@@ -34,14 +34,14 @@ const fetch=()=>{
     // console.log("id",id)
     console.log("List",List)
     axios
-      .put("http://localhost:4000/update/"+id, { task: task })
+      .put("https://task-api-cvll.onrender.com/update/"+id, { task: task })
       .then((result) => console.log(result))
       .catch((err) => console.log(err));
   }
 
   const handleDelete=(id)=>{
 
-    axios.delete("http://localhost:4000/delete/"+id)
+    axios.delete("https://task-api-cvll.onrender.com/delete/"+id)
 
   }
   return (
